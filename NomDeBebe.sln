@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ONSDataImporter", "ONSDataI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomDeBebe.Application", "NomDeBebe.Application\NomDeBebe.Application.csproj", "{FEBBB154-EA33-4E2D-AEE0-C75A663A6756}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{26BF6A76-DF16-44EE-94F0-1DF57CA9704B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnsImporterTests", "OnsImporterTests\OnsImporterTests.csproj", "{617EB9B9-BAB1-4D34-BBC8-F28E0D74902C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +37,15 @@ Global
 		{FEBBB154-EA33-4E2D-AEE0-C75A663A6756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEBBB154-EA33-4E2D-AEE0-C75A663A6756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEBBB154-EA33-4E2D-AEE0-C75A663A6756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617EB9B9-BAB1-4D34-BBC8-F28E0D74902C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617EB9B9-BAB1-4D34-BBC8-F28E0D74902C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617EB9B9-BAB1-4D34-BBC8-F28E0D74902C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617EB9B9-BAB1-4D34-BBC8-F28E0D74902C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{617EB9B9-BAB1-4D34-BBC8-F28E0D74902C} = {26BF6A76-DF16-44EE-94F0-1DF57CA9704B}
 	EndGlobalSection
 EndGlobal
