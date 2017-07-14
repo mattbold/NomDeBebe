@@ -8,7 +8,7 @@ namespace NomDeBebe.Data.Entities
 {
     public class YearEntry
     {
-        [key]
+        [Key]
         public int Id { get; set; }
 
         [Required]

@@ -8,7 +8,7 @@ namespace NomDeBebe.Data
     {
         public BebeContext(DbContextOptions options) : base(options)
         {
-            Database.EnsureCreated();
+
         }
 
         public DbSet<BabyName> BabyNames { get; set; }
