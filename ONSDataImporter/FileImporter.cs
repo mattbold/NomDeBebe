@@ -8,14 +8,36 @@ namespace ONSDataImporter
     {
         private string rootFolder { get; set; }
 
-        public FileImporter(string rootFolder)
+        public string fileName { get; set; }
+
+        public int year { get; set; }
+
+        public string fileContents { get; set; }
+
+        private IList<>
+
+        public FileImporter(string rootFolder, int year, string fileName)
         {
-            this.rootFolder = rootFolder;
+            this.fileName = fileName;
+            this.year = year;
         }
 
-        public bool ImportFile()
+        public bool FindAndImportFile()
         {
+            LoadFileContents();
+            ConvertCSVtoEntities()
+();
             return true;
+        }
+
+        private void LoadFileContents()
+        {
+            fileContents = System.IO.File.ReadAllText(fileName);
+        }
+
+        private void ConvertCSVtoEntities()
+        {
+
         }
     }
 }

@@ -9,16 +9,16 @@ namespace OnsImporterTests.FileImporter
     public class FileImporterTests
     {
         [TestMethod]
-        public void ImportFileReturnsTrue()
+        public void ImportFileLoadsFile()
         {
             // Arrange
-            var importer = new ONSDataImporter.FileImporter("");
+            var importer = new ONSDataImporter.FileImporter("",2015, @"C:\Temp\boys 2015.csv");
 
             // Act
-            var result = importer.ImportFile();
+            var result = importer.FindAndImportFile();
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual("Rank", importer.fileContents.Substring(0,4));
         }
     }
 }

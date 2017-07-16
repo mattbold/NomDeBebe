@@ -22,5 +22,11 @@ namespace NomDeBebe.Controllers
 
             return Ok(names);
         }
+
+        [HttpPost]
+        public IActionResult AddNames()
+        {
+            return Ok();
+        }
     }
 }
