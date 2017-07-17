@@ -12,9 +12,7 @@ namespace ONSDataImporter
 
         public int year { get; set; }
 
-        public string fileContents { get; set; }
-
-        private IList<>
+        public string[] linesOfFile { get; set; }
 
         public FileImporter(string rootFolder, int year, string fileName)
         {
@@ -32,12 +30,22 @@ namespace ONSDataImporter
 
         private void LoadFileContents()
         {
-            fileContents = System.IO.File.ReadAllText(fileName);
+            //Think we want to open this file and read into streamreader really.
+            var linesOfFile = System.IO.File.ReadAllLines(fileName);
         }
 
-        private void ConvertCSVtoEntities()
+        private void ConvertCSVtoObjects()
         {
+            const int startOnLine = 1;
 
+            int counter = 0;
+
+
+
+            for(int i = 1; i < linesOfFile.Length; i++)
+            {
+                
+            }
         }
     }
 }
