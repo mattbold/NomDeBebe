@@ -8,9 +8,10 @@ using NomDeBebe.Data;
 namespace NomDeBebe.Data.Migrations
 {
     [DbContext(typeof(BebeContext))]
-    partial class BebeContextModelSnapshot : ModelSnapshot
+    [Migration("20170721142824_addedGender")]
+    partial class addedGender
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

@@ -9,6 +9,7 @@ namespace OnsImporterTests.FileImporter
     public class FileImporterTests
     {
         [TestMethod]
+        [Ignore]
         public void ImportFileLoadsFile()
         {
             // Arrange

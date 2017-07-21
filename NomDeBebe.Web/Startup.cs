@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NomDeBebe.Data;
 using Microsoft.EntityFrameworkCore;
+using NomDeBebe.Application.UseCases.BabyNames;
+using NomDeBebe.Integration.UseCases.BabyNames;
 
 namespace NomDeBebe
 {
@@ -32,6 +34,11 @@ namespace NomDeBebe
             // Add framework services.
             services.AddMvc();
             services.AddDbContext<BebeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("NomDeBebe.Data")));
+
+            // Add application services.
+            services.AddTransient<IBabyNameRepository, BabyNameRepository>();
+            services.AddTransient<IBabyNameInteractor, BabyNameInteractor>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

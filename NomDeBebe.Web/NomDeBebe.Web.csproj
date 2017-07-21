@@ -23,6 +23,8 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NomDeBebe.Application.Integration\NomDeBebe.Integration.csproj" />
+    <ProjectReference Include="..\NomDeBebe.Application\NomDeBebe.Application.csproj" />
     <ProjectReference Include="..\NomDeBebe.Data\NomDeBebe.Data.csproj" />
   </ItemGroup>
 
