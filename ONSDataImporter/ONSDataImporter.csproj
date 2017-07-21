@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NomDeBebe.Application.Integration\NomDeBebe.Integration.csproj" />
+    <ProjectReference Include="..\NomDeBebe.Application\NomDeBebe.Application.csproj" />
+    <ProjectReference Include="..\NomDeBebe.Data\NomDeBebe.Data.csproj" />
+  </ItemGroup>
+
 </Project>

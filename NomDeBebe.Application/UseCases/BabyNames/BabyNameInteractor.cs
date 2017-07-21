@@ -22,5 +22,10 @@ namespace NomDeBebe.Application.UseCases.BabyNames
 
             return response;
         }
+
+        public bool ImportNames(List<BabyName> babyNames)
+        {
+
+        }
     }
 }
