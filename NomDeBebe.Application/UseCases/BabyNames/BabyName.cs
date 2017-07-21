@@ -10,6 +10,8 @@ namespace NomDeBebe.Application.UseCases.BabyNames
 
         public string Name { get; set; }
 
+        public string Gender { get; set; }
+
         public ICollection<YearEntry> YearEntries { get; set; }
     }
 }

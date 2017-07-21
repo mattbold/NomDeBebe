@@ -6,6 +6,6 @@ namespace NomDeBebe.Application.UseCases.BabyNames
 {
     public interface IBabyNameRepository
     {
-
+        BabyName GetBabyNameWithYearData(string babyName);
     }
 }

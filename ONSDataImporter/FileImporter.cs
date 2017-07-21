@@ -23,8 +23,7 @@ namespace ONSDataImporter
         public bool FindAndImportFile()
         {
             LoadFileContents();
-            ConvertCSVtoEntities()
-();
+            ConvertCSVtoEntities();
             return true;
         }
 
@@ -34,18 +33,15 @@ namespace ONSDataImporter
             var linesOfFile = System.IO.File.ReadAllLines(fileName);
         }
 
-        private void ConvertCSVtoObjects()
+        private void ConvertCSVtoEntities()
         {
             const int startOnLine = 1;
 
-            int counter = 0;
-
-
-
-            for(int i = 1; i < linesOfFile.Length; i++)
+            for(int i = startOnLine; i < linesOfFile.Length; i++)
             {
                 
             }
+
         }
     }
 }
