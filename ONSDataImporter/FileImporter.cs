@@ -46,8 +46,7 @@ namespace ONSDataImporter
 
         private void LoadFileContents()
         {
-            //Think we want to open this file and read into streamreader really.
-            var linesOfFile = System.IO.File.ReadAllLines(fileName);
+            this.linesOfFile = System.IO.File.ReadAllLines(fileName);
         }
 
         private void ConvertCSVtoEntities()
@@ -58,21 +57,28 @@ namespace ONSDataImporter
             {
                 var babyName = new BabyName();
 
-                string[] lineContent = linesOfFile[i].Split(',');
+                string[] lineContent = Utilities.CSVutilities.SplitLineOfCSV(linesOfFile[i]);
 
                 babyName.Name = lineContent[nameColumnIndex];
                 babyName.Gender = this.gender;
 
                 YearEntry newYearEntry = new YearEntry();
                 newYearEntry.Year = this.year;
-                newYearEntry.RankInYear = lineContent[rankColumnIndex];
-                newYearEntry.NumberInYear = lineContent[numberColumnIndex];
+                newYearEntry.RankInYear = int.Parse(lineContent[rankColumnIndex]);
+                newYearEntry.NumberInYear = int.Parse(lineContent[numberColumnIndex]);
 
                 babyName.YearEntries.Add(newYearEntry);
 
                 babyNamesForImport.Add(babyName);
             }
 
+        }
+
+        
+
+        private void SaveData()
+        {
+            this.babyNameInteractor.ImportNames(babyNamesForImport);
         }
     }
 }

@@ -18,9 +18,9 @@ namespace NomDeBebe.Integration.UseCases.BabyNames.Mappers
             };
         }
 
-        public static IList<YearEntry> ConvertYearEntriesFromEntities(IEnumerable<Data.Entities.YearEntry> yearEntryEntities)
+        public static IList<Application.UseCases.BabyNames.YearEntry> ConvertYearEntriesFromEntities(IEnumerable<Data.Entities.YearEntry> yearEntryEntities)
         {
-            List<YearEntry> yearEntryList = new List<YearEntry>();
+            List<Application.UseCases.BabyNames.YearEntry> yearEntryList = new List<Application.UseCases.BabyNames.YearEntry>();
 
             foreach (var yearEntryEntity in yearEntryEntities)
             {
@@ -30,9 +30,9 @@ namespace NomDeBebe.Integration.UseCases.BabyNames.Mappers
             return yearEntryList;
         }
 
-        public static YearEntry ConvertYearEntryEntityToYearEntryBusinessObject(Data.Entities.YearEntry yearEntryEntity)
+        public static Application.UseCases.BabyNames.YearEntry ConvertYearEntryEntityToYearEntryBusinessObject(Data.Entities.YearEntry yearEntryEntity)
         {
-            var yearEntry = new YearEntry();
+            var yearEntry = new Application.UseCases.BabyNames.YearEntry();
 
             yearEntry.Year = yearEntryEntity.Year;
             yearEntry.NumberInYear = yearEntryEntity.NumberInYear;

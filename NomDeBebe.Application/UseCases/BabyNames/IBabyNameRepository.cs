@@ -8,6 +8,6 @@ namespace NomDeBebe.Application.UseCases.BabyNames
     {
         BabyName GetBabyNameWithYearData(string babyName);
 
-        void ImportBabyNames(List<BabyName>);
+        void ImportBabyNames(List<BabyName> babyNames);
     }
 }

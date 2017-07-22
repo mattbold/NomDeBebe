@@ -23,9 +23,9 @@ namespace NomDeBebe.Application.UseCases.BabyNames
             return response;
         }
 
-        public bool ImportNames(List<BabyName> babyNames)
+        public void ImportNames(List<BabyName> babyNames)
         {
-
+            this.babyNameRepository.ImportBabyNames(babyNames);
         }
     }
 }

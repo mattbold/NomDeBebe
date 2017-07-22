@@ -8,6 +8,6 @@ namespace NomDeBebe.Application.UseCases.BabyNames
     {
         GetNameSearchResponse NameSearch(string name);
 
-        bool ImportNames(List<BabyName> babyNames);
+        void ImportNames(List<BabyName> babyNames);
     }
 }
