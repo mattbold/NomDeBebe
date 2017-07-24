@@ -77,5 +77,21 @@ namespace NomDeBebe.IntegrationTests.UseCases.BabyNames
 
             return yearEntryList;
         }
+
+        [TestMethod]
+        public void AssertThatConvertYearEntryBusinessObjectToEntityWorks()
+        {
+            // Arrange
+            var yearEntryBo = new NomDeBebe.Application.UseCases.BabyNames.BabyName { BabyNameId = 1, Name = "Billy", Gender = "M" };
+
+            // Act
+            var result = BabyBusinessObjectToEntityMapper.ConvertFromBusinessObject(yearEntryBo);
+
+            // Assert
+            Assert.AreEqual(1, result.Id);
+            Assert.AreEqual("Billy", result.Name);
+            Assert.AreEqual("M", result.Gender);
+            Assert.IsNotNull(result.YearEntries);
+        }
     }
 }

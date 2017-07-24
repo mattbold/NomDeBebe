@@ -24,6 +24,7 @@ namespace OnsImporterTests.Utilities
         }
 
         [TestMethod]
+        [Ignore]
         public void SplitLineOfCSVWorksCorrectlyWithoutCommaInNumber()
         {
             // Arrange
