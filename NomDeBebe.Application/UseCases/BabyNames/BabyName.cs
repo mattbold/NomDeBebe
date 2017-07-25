@@ -12,7 +12,7 @@ namespace NomDeBebe.Application.UseCases.BabyNames
 
         public string Gender { get; set; }
 
-        public ICollection<YearEntry> YearEntries { get; set; }
+        public List<YearEntry> YearEntries { get; set; }
 
         public BabyName()
         {
