@@ -69,7 +69,7 @@ namespace NomDeBebe.IntegrationTests.UseCases.BabyNames
             return new BabyName { Name = "Seth", Gender = "M", Id = 1 };
         }
 
-        private IEnumerable<YearEntry> GetYearEntryEntities()
+        private ICollection<YearEntry> GetYearEntryEntities()
         {
             List<YearEntry> yearEntryList = new List<YearEntry>();
 

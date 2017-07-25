@@ -14,7 +14,8 @@ namespace NomDeBebe.Integration.UseCases.BabyNames.Mappers
             {
                 Id = bo.BabyNameId,
                 Name = bo.Name,
-                Gender = bo.Gender
+                Gender = bo.Gender,
+                YearEntries = ConvertYearEntriesBusinessObjectsToEntities(bo.YearEntries)
             };
         }
 

@@ -5,6 +5,7 @@ using NomDeBebe.Application;
 using NomDeBebe.Application.UseCases.BabyNames;
 using NomDeBebe.Data;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace NomDeBebe.Integration.UseCases.BabyNames
 {
@@ -19,7 +20,9 @@ namespace NomDeBebe.Integration.UseCases.BabyNames
 
         public BabyName GetBabyNameWithYearData(string babyName)
         {
-            var returnedName = context.BabyNames.FirstOrDefault(b => b.Name == babyName);
+            var returnedName = context.BabyNames
+                .Include(b => b.YearEntries)
+                .FirstOrDefault(b => b.Name == babyName);
 
             return Mappers.BabyNameEntityToBusinessObjectMapper.ConvertFromEntity(returnedName);
         }
@@ -41,7 +44,7 @@ namespace NomDeBebe.Integration.UseCases.BabyNames
 
         public bool BabyNameExistsInDatabaseAlready(string babyName)
         {
-            if(context.BabyNames.Count(b => b.Name == babyName) > 1)
+            if(context.BabyNames.Count(b => b.Name.ToLower() == babyName.ToLower()) > 0)
             {
                 return true;
             }
@@ -51,7 +54,12 @@ namespace NomDeBebe.Integration.UseCases.BabyNames
 
         public void InsertNewYearData(BabyName babyName)
         {
-            throw new NotImplementedException();
+            var babyNameEntity = context.BabyNames.FirstOrDefault(b => b.Name == babyName.Name);
+
+            babyNameEntity.YearEntries.Add(new Data.Entities.YearEntry { Year = babyName.YearEntries[0].Year, NumberInYear = babyName.YearEntries[0].NumberInYear, RankInYear = babyName.YearEntries[0].RankInYear });
+
+            this.context.Update(babyNameEntity);
+            this.context.SaveChanges();
         }
 
         public void InsertBabyName(BabyName babyName)

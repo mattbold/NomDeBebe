@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace NomDeBebe.Integration.UseCases.BabyNames.Mappers
 {
@@ -13,11 +14,12 @@ namespace NomDeBebe.Integration.UseCases.BabyNames.Mappers
             {
                 BabyNameId = entity.Id,
                 Name = entity.Name,
-                Gender = entity.Gender
+                Gender = entity.Gender,
+                YearEntries = ConvertYearEntriesFromEntities(entity.YearEntries)
             };
         }
 
-        public static IList<YearEntry> ConvertYearEntriesFromEntities(IEnumerable<Data.Entities.YearEntry> yearEntryEntities)
+        public static List<YearEntry> ConvertYearEntriesFromEntities(ICollection<Data.Entities.YearEntry> yearEntryEntities)
         {
             List<YearEntry> yearEntryList = new List<YearEntry>();
 
