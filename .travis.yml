@@ -1,2 +1,8 @@
 language: csharp
 solution: NomDeBebe.sln
+mono: none
+dotnet: 1.0.3
+dist: trusty
+script:
+ - dotnet restore
+...
