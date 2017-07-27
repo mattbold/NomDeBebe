@@ -15,7 +15,7 @@ namespace NomDeBebe.Integration.UseCases.BabyNames
 
         public BabyNameRepository(BebeContext context)
         {
-            this.context = context;
+            this.context = context
         }
 
         public BabyName GetBabyNameWithYearData(string babyName)
